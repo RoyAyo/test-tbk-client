@@ -10,3 +10,5 @@ RUN npm ci
 
 EXPOSE 5173
 RUN npm run build
+
+CMD [ "npm", "run", "dev" ]
