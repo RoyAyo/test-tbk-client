@@ -1,0 +1,14 @@
+version: '3.5'
+networks:
+  trustblock-test-network: {}
+services:
+  client:
+    container_name: trustblock-test-client
+    build:
+      context: ./client
+    command: >
+      npm run dev
+    ports:
+      - 5173:5173
+    networks:
+      - trustblock-test-network
