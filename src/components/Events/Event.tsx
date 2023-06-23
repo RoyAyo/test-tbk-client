@@ -2,6 +2,7 @@
 import { authenticate, useMetaMask } from '~/hooks/useMetaMask'
 import styles from './Event.module.css'
 import { useEffect, useState } from 'react'
+import { formatAddress } from '~/utils'
 
 export const Event = () => {
 
@@ -135,7 +136,7 @@ export const Event = () => {
                       events.map(event => (
                         <tr key={event.id}>
                           <td> {event.name} </td>
-                          <td> {event.user?.walletAddress} </td>
+                          <td> {formatAddress(event.user?.walletAddress)} </td>
                           <td><button value="true" onClick={e => changeUpdateButton(e, event)}>Update</button></td>
                           <td><button onClick={e => deleteEvent(e, event.id)}>Delete</button></td>
                         </tr>
